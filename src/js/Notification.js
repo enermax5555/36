@@ -14,7 +14,7 @@ export default class Notification {
 
   render() {
     const template = `
-<div class="notification type-pepperoni">
+<div class="notification type-${type}">
   <button class="delete"></button>
   🍕 <span class="type">pepperoni</span> (<span class="price">0,00</span>) has been added to your order.
 </div>
