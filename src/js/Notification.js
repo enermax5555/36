@@ -1,3 +1,4 @@
+import classNames from "classnames";
 export default class Notification {
   static get types() {
     return {
