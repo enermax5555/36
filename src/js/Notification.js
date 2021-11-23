@@ -19,8 +19,8 @@ export default class Notification {
 	  let dangerClass = classNames({
 		'is-danger': Notification.types.HAWAIIAN === type
 		  });
-	function remove(this) {
-		document.getElementById(this).outerHTML = ""
+	function remove(me) {
+		document.getElementById(me).outerHTML = ""
 	};
     const template = `
 <div class="notification type-${type} ${dangerClass}">
