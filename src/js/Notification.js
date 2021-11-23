@@ -21,7 +21,7 @@ export default class Notification {
 		  });
     const template = `
 <div class="notification type-${type} ${dangerClass}">
-  <button class="delete" onclick=""></button>
+  <button class="delete" onclick="(delete) => delete.parentNode.remove())(delete)"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
