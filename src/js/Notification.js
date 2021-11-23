@@ -15,13 +15,14 @@ export default class Notification {
   }
   empty(){
   }
+  function remove(me) {
+		document.getElementById(me).outerHTML = ""
+  };
   render({type, price}) {
 	  let dangerClass = classNames({
 		'is-danger': Notification.types.HAWAIIAN === type
 		  });
-	function remove(me) {
-		document.getElementById(me).outerHTML = ""
-	};
+
     const template = `
 <div class="notification type-${type} ${dangerClass}">
   <button class="delete" id="deleteMe" onclick="remove(this.id)"></button>
