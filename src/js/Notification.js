@@ -16,8 +16,11 @@ export default class Notification {
   empty(){
   }
   render({type, price}) {
+	  let dangerClass = classNames({
+		'is-danger': Notification.types.HAWAIIAN === type
+		  });
     const template = `
-<div class="notification type-${type}">
+<div class="notification type-${type} ${dangerClass}">
   <button class="delete"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
