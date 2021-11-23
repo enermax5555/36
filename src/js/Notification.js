@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import formatCurrency from "utils";
+import formatCurrency from "./utils";
 export default class Notification {
   static get types() {
     return {
