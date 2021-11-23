@@ -19,9 +19,12 @@ export default class Notification {
 	  let dangerClass = classNames({
 		'is-danger': Notification.types.HAWAIIAN === type
 		  });
+	function remove(this) {
+		document.getElementById(this).outerHTML = ""
+	};
     const template = `
 <div class="notification type-${type} ${dangerClass}">
-  <button class="delete" onclick="(delete) => delete.parentNode.remove())(delete)"></button>
+  <button class="delete" id="deleteMe" onclick="remove(this.id)"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
