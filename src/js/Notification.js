@@ -14,7 +14,7 @@ export default class Notification {
     this.container.classList.add("notification-container");
   }
 
-  render() {
+  render(type, price) {
     const template = `
 <div class="notification type-${type}">
   <button class="delete"></button>
