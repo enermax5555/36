@@ -13,7 +13,8 @@ export default class Notification {
     this.container = document.createElement("div");
     this.container.classList.add("notification-container");
   }
-
+  empty(){
+  }
   render({type, price}) {
     const template = `
 <div class="notification type-${type}">
