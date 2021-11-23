@@ -18,7 +18,7 @@ export default class Notification {
     const template = `
 <div class="notification type-${type}">
   <button class="delete"></button>
-  🍕 <span class="type">pepperoni</span> (<span class="price">${formatCurrency}</span>) has been added to your order.
+  🍕 <span class="type">pepperoni</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
 
