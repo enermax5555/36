@@ -13,6 +13,7 @@ export default class Notification {
     this.container.classList.add("notification-container");
   }
   empty(){
+	  this.container.innerHTML = '';
   };
   render({type, price}) {
 	  let dangerClass = classNames({
