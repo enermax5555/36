@@ -8,13 +8,16 @@ export default class Notification {
       HAWAIIAN: "hawaiian",
     };
   }
-
+	function remove() {
+		let deletedObj = document.getElementById("deleteMe");
+		deletedObj.remove();
+	}
   constructor() {
     this.container = document.createElement("div");
     this.container.classList.add("notification-container");
   }
   empty(){
-  }
+  };
   render({type, price}) {
 	  let dangerClass = classNames({
 		'is-danger': Notification.types.HAWAIIAN === type
@@ -22,7 +25,7 @@ export default class Notification {
 
     const template = `
 <div class="notification type-${type} ${dangerClass}">
-  <button class="delete" onclick="this.remove()"></button>
+  <button class="delete" id="deletedObj" onclick="remove(this)"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
