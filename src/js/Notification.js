@@ -8,10 +8,6 @@ export default class Notification {
       HAWAIIAN: "hawaiian",
     };
   }
-	function remove() {
-		let deletedObj = document.getElementById("deleteMe");
-		deletedObj.remove();
-	}
   constructor() {
     this.container = document.createElement("div");
     this.container.classList.add("notification-container");
@@ -25,7 +21,7 @@ export default class Notification {
 
     const template = `
 <div class="notification type-${type} ${dangerClass}">
-  <button class="delete" id="deletedObj" onclick="remove(this)"></button>
+  <button class="delete" onclick=((event) => event.target.parentNode.remove())(event)"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
