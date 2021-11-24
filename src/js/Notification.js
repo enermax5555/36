@@ -13,7 +13,6 @@ export default class Notification {
     this.container.classList.add("notification-container");
   }
   empty(){
-	  this.container.innerHTML = '';
   };
   render({type, price}) {
 	  let dangerClass = classNames({
@@ -22,7 +21,7 @@ export default class Notification {
 
     const template = `
 <div class="notification type-${type} ${dangerClass}">
-  <button class="delete" onclick=((event) => event.target.parentNode.remove())(event)"></button>
+  <button class="delete" onclick="((event) => event.target.parentNode.remove())(event)"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
